@@ -14,8 +14,8 @@ namespace xplatform
 			using (var game = new Game())
 			{
 				//game.LoadScene<MainScene>();
-				var scene = new MainScene();
-				game.LoadScene(scene);
+				//var scene = new MainScene();
+				game.LoadScene<EntityScene>();
 				game.Run();
 			}
 		}
