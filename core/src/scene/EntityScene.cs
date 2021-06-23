@@ -1,3 +1,4 @@
+/*
 using System;
 
 using Microsoft.Xna.Framework;
@@ -37,3 +38,4 @@ public class EntityScene : Scene
 		_entitySystem.Draw(gameTime, SpriteBatch);
 	}
 }
+*/
