@@ -16,7 +16,6 @@ public class ECSScene : Scene
 	{
 		_ecs = new ECS(this);
 		_ecs.RegisterComponentSystem<TestComponent, TestComponentSystem>();
-		_ecs.RegisterComponentSystem<TestInputComponent, TestInputComponentSystem>();
 
 		OnInitialize(Initialize);
 		OnUpdate(Update);
@@ -25,10 +24,14 @@ public class ECSScene : Scene
 
 	private void Initialize()
 	{
+		var inline = new Component()
+			.OnInitialize(() => { Console.WriteLine("Inline component initialized!"); })
+			.OnUpdate((GameTime gameTime) => { Console.WriteLine("Inline component updated!"); });
+
 		_ecs.CreateEntity()
-			//.AddComponent<TestComponent>();
-			.AddComponent<TestInputComponent>()
-			.AddComponent<InputComponent>();
+			.AddComponent<SpriteComponent>()
+			.AddComponent(inline)
+			.AddComponent<TestComponent>();
 
 		_ecs.Initialize();
 	}

@@ -13,6 +13,10 @@ namespace xplatform
 		{
 			using (var game = new Game())
 			{
+				game.GraphicsDeviceManager.PreferredBackBufferWidth = 800;
+				game.GraphicsDeviceManager.PreferredBackBufferHeight = 480;
+				game.GraphicsDeviceManager.ApplyChanges();
+				
 				game.LoadScene<ECSScene>();
 				game.Run();
 			}
