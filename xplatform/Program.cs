@@ -21,7 +21,7 @@ namespace xplatform
 				game.GraphicsDeviceManager.ApplyChanges();
 				
 				game.LoadScene(inline);
-				game.LoadScene<MainScene>();
+				game.LoadScene<UIScene>();
 				game.Run();
 			}
 		}

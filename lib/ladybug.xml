@@ -4,6 +4,597 @@
         <name>ladybug</name>
     </assembly>
     <members>
+        <member name="T:Ladybug.Beta.UI.ButtonResources">
+            <summary>
+            Static class containing unique resource keys for Buttons
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.ButtonResources.DefaultBackground">
+            <summary>
+            Unique string key for default Button background
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.ButtonResources.DefaultFont">
+            <summary>
+            Unique string key for default Button font
+            </summary>
+        </member>
+        <member name="T:Ladybug.Beta.UI.Button">
+            <summary>
+            Ladybug base Button control
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Button.Text">
+            <summary>
+            The Button's text content
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Button.Font">
+            <summary>
+            The Button's font
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Button.Initialize">
+            <summary>
+            Called when the Button is initialized
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Button.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Called when the Button's bounds are updated
+            </summary>
+            <param name="oldBounds"></param>
+            <param name="newBounds"></param>
+        </member>
+        <member name="T:Ladybug.Beta.UI.ComposedControl">
+            <summary>
+            A Comoposable Control
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnInitialize(System.Action)">
+            <summary>
+            Sets the action run when this Control is initialized
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnAttach(System.Action{Ladybug.Beta.UI.Control})">
+            <summary>
+            Sets the action run when this Control is attached to a parent control
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnAddChild(System.Action{Ladybug.Beta.UI.Control})">
+            <summary>
+            Action run when a child control is attached to this Control
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnClick(System.Action{Ladybug.UserInput.InputState})">
+            <summary>
+            Action run when this Control is clicked
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnFocus(System.Action)">
+            <summary>
+            Action run when this Control gains focus
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnUnfocus(System.Action)">
+            <summary>
+            Action run when this Control loses focus
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnCursorEnter(System.Action)">
+            <summary>
+            Action run when the cursor enters this Control's bounds
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnCursorLeave(System.Action)">
+            <summary>
+            Action run when the cursor leaves this Control's bounds
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnUpdateBounds(System.Action{Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle})">
+            <summary>
+            Action run when this Control's bounds are updated
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnUpdate(System.Action)">
+            <summary>
+            Action run when this Control is updated each frame
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.ComposedControl.OnDraw(System.Action{Microsoft.Xna.Framework.Graphics.SpriteBatch})">
+            <summary>
+            Action run when this Control is drawn
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ladybug.Beta.UI.Control">
+            <summary>
+            Base Ladybug UI Control class
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.Control.Clicked">
+            <summary>
+            The Control has been Clicked
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.Control.Focused">
+            <summary>
+            The Control has gained focus
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.Control.Unfocused">
+            <summary>
+            The Control has lost focus
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.Control.CursorEntered">
+            <summary>
+            The cursor has entered the control's bounds
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.Control.CursorLeft">
+            <summary>
+            The cursor has left the control's bounds
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.#ctor">
+            <summary>
+            Create a new Control
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.ResourceCatalog">
+            <summary>
+            Reference to the managing UI's ResourceCatalog
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Item(System.String)">
+            <summary>
+            Access one of this Control's children by name
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Name">
+            <summary>
+            Name of this Control
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Parent">
+            <summary>
+            This Control's parent Control
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Children">
+            <summary>
+            This Control's Children
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.UI">
+            <summary>
+            This Control's managing UI
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Scene">
+            <summary>
+            This Controls' managing scene
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Game">
+            <summary>
+            This control's managing game
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.BlockCursor">
+            <summary>
+            Whether to allow the cursor to target controls beneath this Control
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.ContainsCursor">
+            <summary>
+            Whether the cursor is within this Control's bounds
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Bounds">
+            <summary>
+            The cursor's position, width, and height
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.ZIndex">
+            <summary>
+            The draw depth of this Control
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.Initialized">
+            <summary>
+            Whether the control has been initialized
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Compose">
+            <summary>
+            Begin inline composing of a new Control
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.AddControl``1(System.String)">
+            <summary>
+            Adds a new child Control of type T to this Control
+            </summary>
+            <param name="name">Name of the new Control</param>
+            <typeparam name="T">Type of the new Control</typeparam>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.AddControl``1(``0@)">
+            <summary>
+            Adds a new child Control of type T to this Control
+            </summary>
+            <param name="control">Reference to the new Control</param>
+            <typeparam name="T">Type of the new Control</typeparam>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.AddControl``1(System.String,``0@)">
+            <summary>
+            Adds a new child Control of type T to this Control
+            </summary>
+            <param name="name">Name of the new Control</param>
+            <param name="control">Reference to the new Control</param>
+            <typeparam name="T">Type of the new Control</typeparam>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.AddControl(Ladybug.Beta.UI.Control)">
+            <summary>
+            Adds an existing Control as a child of this Control
+            </summary>
+            <param name="control">Control to add as a child of this Control</param>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sets the Control's Bounds
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.SetBounds(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Sets the Control's Bounds
+            </summary>
+            <param name="newBounds"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.SetPosition(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Sets the Control's Position
+            </summary>
+            <param name="newPos"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.SetPosition(System.Int32,System.Int32)">
+            <summary>
+            Sets the Control's Position
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Move(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Moves the Control relative to its current position
+            </summary>
+            <param name="newPos"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Move(System.Int32,System.Int32)">
+            <summary>
+            Moves the Control relative to its current position
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Initialize">
+            <summary>
+            Called when the Control is Initialized
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Attach(Ladybug.Beta.UI.Control)">
+            <summary>
+            Called when the Control is attached to a parent control
+            </summary>
+            <param name="parentControl"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.AddChild(Ladybug.Beta.UI.Control)">
+            <summary>
+            Called when a child control is attached to this Control
+            </summary>
+            <param name="childControl"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Click(Ladybug.UserInput.InputState)">
+            <summary>
+            Called when this Control is clicked
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Focus">
+            <summary>
+            Called when this Control gains focus
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Unfocus">
+            <summary>
+            Called when this Control loses focus
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.CursorEnter">
+            <summary>
+            Called when the cursor enters this Control's bounds
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.CursorLeave">
+            <summary>
+            Called when the cursor leaves this Control's bounds
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Called when this Control's bounds are updated
+            </summary>
+            <param name="oldBounds"></param>
+            <param name="newBounds"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Update">
+            <summary>
+            Called when this Control is updated each frame
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when this Control is drawn
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.Beta.UI.TextureType">
+            <summary>
+            Type of texture, Map or Basic
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.TextureType.Basic">
+            <summary>
+            Standard texture
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.TextureType.Map">
+            <summary>
+            9-slice texture map
+            </summary>
+        </member>
+        <member name="T:Ladybug.Beta.UI.LabelResources">
+            <summary>
+            Static class containing resource keys for common Label resources
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.LabelResources.DefaultFont">
+            <summary>
+            Unique string key for default Label font
+            </summary>
+        </member>
+        <member name="T:Ladybug.Beta.UI.Label">
+            <summary>
+            Ladybug base Label control
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Label.Text">
+            <summary>
+            The Label's text content
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Label.TextColor">
+            <summary>
+            The Label's Text Color
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Label.Font">
+            <summary>
+            The Label's Font
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Label.Initialize">
+            <summary>
+            Called when the button is initialized
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Label.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Called when the Label's bounds are updated
+            </summary>
+            <param name="oldBounds"></param>
+            <param name="newBounds"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when the Label is drawn
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.Beta.UI.PanelResources">
+            <summary>
+            Static class containing resource keys for common Panel resources
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.PanelResources.DefaultBackground">
+            <summary>
+            Resource key for a <see cref="T:Ladybug.Beta.UI.Panel"/>'s default background.
+            </summary>
+            <remarks>If this key is assigned in a UI's ResourceCatalog, any Panels attached to that UI will use this resource as its initial background</remarks>
+        </member>
+        <member name="T:Ladybug.Beta.UI.Panel">
+            <summary>
+            Ladybug base Panel control
+            </summary>
+            <remarks>
+            Panels specialize in containing child Controls, and update the position of child controls relative to the Panel's bounds.
+            </remarks>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Panel.BackgroundType">
+            <summary>
+            Type of background texture used by this Panel
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Panel.BackgroundTexture">
+            <summary>
+            The texture used by the Panel to construct its background
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.Panel.m_BackgroundTexture">
+            <summary>
+            Source background texture used to build the background map
+            </summary>
+            <remarks>
+            Used directly if BackgroundType is set to Basic
+            </remarks>
+        </member>
+        <member name="F:Ladybug.Beta.UI.Panel._generatedBackground">
+            <summary>
+            Background generated from map
+            </summary>
+            <remarks>
+            Set by BuildBackground(), used by Background property
+            </remarks>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Panel.Background">
+            <summary>
+            Background property used by Draw()
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Panel.Initialize">
+            <summary>
+            Called when the Panel is initialized, after it is attached to a parent control
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Panel.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Called when the Panel's bounds are updated
+            </summary>
+            <param name="oldBounds">The Panel's previous bounds</param>
+            <param name="newBounds">The Panel's new bounds</param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Panel.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when the Panel is drawn
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.Beta.UI.UIResources">
+            <summary>
+            Static class containing resource keys for common UI resources
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.UIResources.DefaultBackground">
+            <summary>
+            Default background texture used by this UI's controls
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.UIResources.DefaultFont">
+            <summary>
+            Default font used by this UI's controls
+            </summary>
+        </member>
+        <member name="T:Ladybug.Beta.UI.UI">
+            <summary>
+            Ladybug root UI manager
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.#ctor(Ladybug.Scene)">
+            <summary>
+            Creates a new UI
+            </summary>
+            <param name="scene"><see cref="T:Ladybug.Scene"/> managing this UI</param>
+            <returns></returns>
+        </member>
+        <member name="P:Ladybug.Beta.UI.UI.FocusedControl">
+            <summary>
+            Control that is currently in focus
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.UI.TargetedControl">
+            <summary>
+            Control that is currently targeted by the cursor
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.UI.Controls">
+            <summary>
+            List of Controls managed by this UI
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.UI.Scene">
+            <summary>
+            Scene that is managing this UI
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.UI.VRC">
+            <summary>
+            Virtual Resolution Container that is rendering this UI
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.UI.ResourceCatalog">
+            <summary>
+            This UI's resident ResourceCatalog
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.RequestSort">
+            <summary>
+            Request the UI update the order of managed controls.
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.GetCursorPosition">
+            <summary>
+            Get the current position of the cursor
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.RegisterControl(Ladybug.Beta.UI.Control)">
+            <summary>
+            Registers a Control to be managed by this UI
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.Update">
+            <summary>
+            Called when the UI is updated
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when the UI is drawn
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
         <member name="T:Ladybug.Camera">
             <summary>
             Ladybug Camera
@@ -121,6 +712,11 @@
             <remarks>Used for culling and draw-optimization</remarks>
             </summary>
         </member>
+        <member name="T:Ladybug.ComposedScene">
+            <summary>
+            An inline-composable Scene
+            </summary>
+        </member>
         <member name="M:Ladybug.ComposedScene.OnLoadContentAsync(System.Action)">
             <summary>
             Sets the task that is run asynchronously when the Scene's
@@ -159,6 +755,14 @@
             </summary>
             <param name="action">Action run upon updating the Scene</param>
             <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnInputAction(System.String,System.Action{Ladybug.UserInput.InputActionEventArgs})">
+            <summary>
+            Sets the action that is run upon the given input action
+            </summary>
+            <param name="name"></param>
+            <param name="action"></param>
+            <returns></returns>
         </member>
         <member name="M:Ladybug.ComposedScene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})">
             <summary>
@@ -460,6 +1064,19 @@
             Creates a new Scene
             </summary>
         </member>
+        <member name="M:Ladybug.Scene.Compose">
+            <summary>
+            Begins inline composition of a new Scene
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.Scene.Compose(Ladybug.Game)">
+            <summary>
+            Begins inline composition of a new Scene
+            </summary>
+            <param name="game"></param>
+            <returns></returns>
+        </member>
         <member name="M:Ladybug.Scene.SetGame(Ladybug.Game)">
             <summary>
             Sets the <see cref="T:Ladybug.Game"/> object that will be managing this Scene
@@ -512,6 +1129,32 @@
             Current <see cref="T:Ladybug.SceneState"/> of the Scene
             </summary>
         </member>
+        <member name="M:Ladybug.Scene.LoadContentAsync">
+            <summary>
+            Run when content is loaded asynchronously
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.InitializeAsync">
+            <summary>
+            Run when the Scene is initialized asynchronously
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.LoadContent">
+            <summary>
+            Run when content is loaded into the Scene
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.Initialize">
+            <summary>
+            Run when the Scene is Initialized
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Run each frame when the Scene is updated
+            </summary>
+            <param name="gameTime"></param>
+        </member>
         <member name="M:Ladybug.Scene.SetInputAction(System.String,System.Action{Ladybug.UserInput.InputActionEventArgs})">
             <summary>
             Sets the action to be performed upon a specific input action
@@ -520,9 +1163,20 @@
             <param name="action"></param>
             <returns></returns>
         </member>
+        <member name="M:Ladybug.Scene.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Run when the Scene is drawn
+            </summary>
+            <param name="gameTime"></param>
+        </member>
         <member name="M:Ladybug.Scene.UnloadScene">
             <summary>
             Unloads the Scene, removing it from the <see cref="T:Ladybug.Game"/> instance that is managing it
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.Unload">
+            <summary>
+            Run when the Scene is unloaded
             </summary>
         </member>
         <member name="M:Ladybug.Scene.PauseScene">
@@ -534,6 +1188,11 @@
             but will still execute Draw actions
             </remarks>
         </member>
+        <member name="M:Ladybug.Scene.Pause">
+            <summary>
+            Run when the Scene is paused
+            </summary>
+        </member>
         <member name="M:Ladybug.Scene.UnpauseScene">
             <summary>
             Unpauses the Scene
@@ -542,6 +1201,11 @@
             Returns the Scene to ACTIVE state,
             only if state was previously PAUSED
             </remarks>
+        </member>
+        <member name="M:Ladybug.Scene.Unpause">
+            <summary>
+            Run when the Scene is unpaused
+            </summary>
         </member>
         <member name="M:Ladybug.Scene.SuspendScene">
             <summary>
@@ -552,6 +1216,11 @@
             Update or Draw actions
             </remarks>
         </member>
+        <member name="M:Ladybug.Scene.Suspend">
+            <summary>
+            Run when the scene is suspended
+            </summary>
+        </member>
         <member name="M:Ladybug.Scene.UnsuspendScene">
             <summary>
             Unsuspends the Scene
@@ -560,6 +1229,21 @@
             Returns the Scene to ACTIVE state,
             only if state was previously SUSPENDED
             </remarks>
+        </member>
+        <member name="M:Ladybug.Scene.Unsuspend">
+            <summary>
+            Run when the scene is unsuspended
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.Stop">
+            <summary>
+            Run when the scene is paused or suspended
+            </summary>
+        </member>
+        <member name="M:Ladybug.Scene.Resume">
+            <summary>
+            Run when the scene is unpaused or unsuspended
+            </summary>
         </member>
         <member name="T:Ladybug.Transform">
             <summary>
@@ -895,6 +1579,11 @@
             By default, checks that <see cref="P:Ladybug.ECS.Component.Visible"/> and <see cref="P:Ladybug.ECS.Entity.Visible"/> are true
             </remarks>
         </member>
+        <member name="M:Ladybug.ECS.Component.Initialize">
+            <summary>
+            Run when Component is initialized
+            </summary>
+        </member>
         <member name="M:Ladybug.ECS.Component.PreUpdate(Microsoft.Xna.Framework.GameTime)">
             <summary>
             Run immediately before Update
@@ -933,6 +1622,52 @@
             </summary>
             <param name="gameTime"></param>
             <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.ECS.ComponentSystem`1">
+            <summary>
+            A System responsible for processing <see cref="T:Ladybug.ECS.Component"/> 
+            update and draw behavior
+            </summary>
+            <typeparam name="T">
+            Type of <see cref="T:Ladybug.ECS.Component"/> this ComponentSystem
+            will process
+            </typeparam>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.RegisterComponent(`0)">
+            <summary>
+            Registers a <see cref="T:Ladybug.ECS.Component"/> to be
+            processed by this ComponentSystem
+            </summary>
+            <param name="component"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.DeregisterComponent(`0)">
+            <summary>
+            Removes a <see cref="T:Ladybug.ECS.Component"/> from
+            this ComponentSystem's process queues
+            </summary>
+            <param name="component"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update all <see cref="T:Ladybug.ECS.Component"/>
+            instances registered with this ComponentSystem
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw all <see cref="T:Ladybug.ECS.Component"/>
+            instances registered with this ComponentSystem
+            </summary>
+            <param name="gameTime"></param>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.RequestDrawSort">
+            <summary>
+            Requests the ComponentSystem to resort registered
+            <see cref="T:Ladybug.ECS.Component"/> instances by
+            their <see cref="P:Ladybug.ECS.Component.DrawPriority"/>
+            </summary>
         </member>
         <member name="T:Ladybug.ECS.Components.ComposedComponentSystem">
             <summary>
@@ -1077,52 +1812,6 @@
             </summary>
             <param name="gameTime"></param>
             <param name="spriteBatch"></param>
-        </member>
-        <member name="T:Ladybug.ECS.ComponentSystem`1">
-            <summary>
-            A System responsible for processing <see cref="T:Ladybug.ECS.Component"/> 
-            update and draw behavior
-            </summary>
-            <typeparam name="T">
-            Type of <see cref="T:Ladybug.ECS.Component"/> this ComponentSystem
-            will process
-            </typeparam>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.RegisterComponent(`0)">
-            <summary>
-            Registers a <see cref="T:Ladybug.ECS.Component"/> to be
-            processed by this ComponentSystem
-            </summary>
-            <param name="component"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.DeregisterComponent(`0)">
-            <summary>
-            Removes a <see cref="T:Ladybug.ECS.Component"/> from
-            this ComponentSystem's process queues
-            </summary>
-            <param name="component"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.Update(Microsoft.Xna.Framework.GameTime)">
-            <summary>
-            Update all <see cref="T:Ladybug.ECS.Component"/>
-            instances registered with this ComponentSystem
-            </summary>
-            <param name="gameTime"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-            <summary>
-            Draw all <see cref="T:Ladybug.ECS.Component"/>
-            instances registered with this ComponentSystem
-            </summary>
-            <param name="gameTime"></param>
-            <param name="spriteBatch"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.RequestDrawSort">
-            <summary>
-            Requests the ComponentSystem to resort registered
-            <see cref="T:Ladybug.ECS.Component"/> instances by
-            their <see cref="P:Ladybug.ECS.Component.DrawPriority"/>
-            </summary>
         </member>
         <member name="T:Ladybug.ECS.ECS">
             <summary>

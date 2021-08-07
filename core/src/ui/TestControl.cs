@@ -1,4 +1,3 @@
-/*
 using System;
 
 using Ladybug.Beta.UI;
@@ -10,4 +9,3 @@ public class TestControl : Control
 		Console.WriteLine("Test control attached!");
 	}
 }
-*/
