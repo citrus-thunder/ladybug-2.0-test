@@ -15,18 +15,12 @@ public class TestComponent : Component
 	private int _counter = 0;
 	private int _counterMax = 10;
 
-	public TestComponent()
-	{
-		OnInitialize(Initialize);
-		OnUpdate(Update);
-	}
-
-	private void Initialize()
+	protected override void Initialize()
 	{
 		Console.WriteLine("Test Component Initialized!");
 	}
 
-	private void Update(GameTime gameTime)
+	protected override void Update(GameTime gameTime)
 	{
 		if (_counter >= _counterMax)
 		{
@@ -37,7 +31,7 @@ public class TestComponent : Component
 		_counter++;
 	}
 
-	private void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+	protected override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 	{
 		Console.WriteLine($"Draw Step {_counter}");
 	}

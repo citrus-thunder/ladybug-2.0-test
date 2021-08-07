@@ -12,16 +12,12 @@ namespace lb2
 		private int _counter = 0;
 		private int _counterMax = 100;
 
-		public MainScene()
+		protected override void Initialize()
 		{
-			OnInitialize(() => 
-			{
-				Console.WriteLine("Main Scene Initialized!");
-			});
-			OnUpdate(Update);
+			Console.WriteLine("Main Scene Initialized!");
 		}
 
-		private void Update(GameTime gameTime)
+		protected override void Update(GameTime gameTime)
 		{
 			if (_counter >= _counterMax)
 			{

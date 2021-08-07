@@ -1,11 +1,13 @@
+/*
 using System;
 
 using Ladybug.Beta.UI;
 
 public class TestControl : Control
 {
-	public TestControl()
+	protected override void Attach(Control parentControl)
 	{
-		OnAttach((Control parent) => {Console.WriteLine("Test control attached!");});
+		Console.WriteLine("Test control attached!");
 	}
 }
+*/

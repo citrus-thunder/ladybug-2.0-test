@@ -13,11 +13,15 @@ namespace xplatform
 		{
 			using (var game = new Game())
 			{
+				var inline = Scene.Compose(game)
+					.OnInitialize(() => Console.WriteLine("Inline Scene Initialized!"));
+				
 				game.GraphicsDeviceManager.PreferredBackBufferWidth = 800;
 				game.GraphicsDeviceManager.PreferredBackBufferHeight = 480;
 				game.GraphicsDeviceManager.ApplyChanges();
 				
-				game.LoadScene<ECSScene>();
+				game.LoadScene(inline);
+				game.LoadScene<MainScene>();
 				game.Run();
 			}
 		}

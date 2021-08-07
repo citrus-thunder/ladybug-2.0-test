@@ -16,15 +16,11 @@ public class ECSScene : Scene
 	{
 		_ecs = new ECS(this);
 		_ecs.RegisterComponentSystem<TestComponent, TestComponentSystem>();
-
-		OnInitialize(Initialize);
-		OnUpdate(Update);
-		OnDraw(Draw);
 	}
 
-	private void Initialize()
+	protected override void Initialize()
 	{
-		var inline = new Component()
+		var inline = Component.Compose()
 			.OnInitialize(() => { Console.WriteLine("Inline component initialized!"); })
 			.OnUpdate((GameTime gameTime) => { Console.WriteLine("Inline component updated!"); });
 
@@ -36,12 +32,12 @@ public class ECSScene : Scene
 		_ecs.Initialize();
 	}
 
-	private void Update(GameTime gameTime)
+	protected override void Update(GameTime gameTime)
 	{
 		_ecs.Update(gameTime);
 	}
 
-	private void Draw(GameTime gameTime)
+	protected override void Draw(GameTime gameTime)
 	{
 		_ecs.Draw(gameTime, SpriteBatch);
 	}

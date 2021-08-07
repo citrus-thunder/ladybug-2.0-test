@@ -4,68 +4,6 @@
         <name>ladybug</name>
     </assembly>
     <members>
-        <member name="M:Ladybug.Beta.UI.Control.AddControl``1(System.String)">
-            <summary>
-            Adds a new child Control of type T to this Control
-            </summary>
-            <param name="name">Name of the new Control</param>
-            <typeparam name="T">Type of the new Control</typeparam>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.AddControl``1(``0@)">
-            <summary>
-            Adds a new child Control of type T to this Control
-            </summary>
-            <param name="control">Reference to the new Control</param>
-            <typeparam name="T">Type of the new Control</typeparam>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.AddControl``1(System.String,``0@)">
-            <summary>
-            Adds a new child Control of type T to this Control
-            </summary>
-            <param name="name">Name of the new Control</param>
-            <param name="control">Reference to the new Control</param>
-            <typeparam name="T">Type of the new Control</typeparam>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.AddControl(Ladybug.Beta.UI.Control)">
-            <summary>
-            Adds an existing Control as a child of this Control
-            </summary>
-            <param name="control">Control to add as a child of this Control</param>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="P:Ladybug.Beta.UI.Control.Initialized">
-            <summary>
-            Whether the control has been initialized
-            </summary>
-            <value></value>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.OnInitialize(System.Action)">
-            <summary>
-            Sets the action performed when this control is initialized
-            </summary>
-            <param name="action"></param>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.OnAttach(System.Action{Ladybug.Beta.UI.Control})">
-            <summary>
-            Sets the action performed when this control is added as a child of another control
-            </summary>
-            <param name="action"></param>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.OnUpdate(System.Action)">
-            <summary>
-            Sets the action performed when this control is updated
-            </summary>
-            <param name="action"></param>
-        </member>
-        <member name="M:Ladybug.Beta.UI.Control.OnDraw(System.Action{Microsoft.Xna.Framework.Graphics.SpriteBatch})">
-            <summary>
-             Sets the action performed when this control is drawn
-            </summary>
-            <param name="action"></param>
-        </member>
         <member name="T:Ladybug.Camera">
             <summary>
             Ladybug Camera
@@ -182,6 +120,106 @@
             Updates visible area.
             <remarks>Used for culling and draw-optimization</remarks>
             </summary>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnLoadContentAsync(System.Action)">
+            <summary>
+            Sets the task that is run asynchronously when the Scene's
+            content is loaded
+            </summary>
+            <param name="action">Asynchronous action run upon loading the Scene's content</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnInitializeAsync(System.Action)">
+            <summary>
+            Sets the task that is run when the Scene is initialized
+            asynchronously
+            </summary>
+            <param name="action">Asycronous action run upon initializing the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnLoadContent(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene's content is
+            loaded.
+            </summary>
+            <param name="action">Action run upon loading the Scene's content</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnInitialize(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene is initialized
+            </summary>
+            <param name="action">Action run upon initializing the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
+            <summary>
+            Sets the action that is run every frame when the Scene
+            is updated
+            </summary>
+            <param name="action">Action run upon updating the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})">
+            <summary>
+            Sets the action that is run every frame when
+            the Scene Draws to the screen
+            </summary>
+            <param name="action">Action run upon drawing the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnUnload(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene
+            is unloaded
+            </summary>
+            <param name="action">Action run upon unloading the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnPause(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene is paused
+            </summary>
+            <param name="action">Action run upon pausing the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnUnpause(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene is unpaused
+            </summary>
+            <param name="action">Action run upon unpausing the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnSuspend(System.Action)">
+            <summary>
+            Sets the action that is run when the scene is suspended
+            </summary>
+            <param name="action">Action run upon suspending the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnUnsuspend(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene is
+            unsuspended
+            </summary>
+            <param name="action">Action run upon unsuspending the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnStop(System.Action)">
+            <summary>
+            Sets the action that run when the Scene is
+            paused or suspended
+            </summary>
+            <param name="action">Action run upon pausing or suspending the Scene</param>
+            <returns>Scene</returns>
+        </member>
+        <member name="M:Ladybug.ComposedScene.OnResume(System.Action)">
+            <summary>
+            Sets the action that is run when the Scene is
+            unpaused or unsuspended
+            </summary>
+            <param name="action"></param>
+            <returns>Scene</returns>
         </member>
         <member name="T:Ladybug.Game">
             <summary>
@@ -474,46 +512,7 @@
             Current <see cref="T:Ladybug.SceneState"/> of the Scene
             </summary>
         </member>
-        <member name="M:Ladybug.Scene.OnLoadContentAsync(System.Func{System.Threading.Tasks.Task})">
-            <summary>
-            Sets the task that is run asynchronously when the Scene's
-            content is loaded
-            </summary>
-            <param name="func">Asynchronous task run upon loading the Scene's content</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnInitializeAsync(System.Func{System.Threading.Tasks.Task})">
-            <summary>
-            Sets the task that is run when the Scene is initialized
-            asynchronously
-            </summary>
-            <param name="func">Asycronous task run upon initializing the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnLoadContent(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene's content is
-            loaded.
-            </summary>
-            <param name="action">Action run upon loading the Scene's content</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnInitialize(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene is initialized
-            </summary>
-            <param name="action">Action run upon initializing the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
-            <summary>
-            Sets the action that is run every frame when the Scene
-            is updated
-            </summary>
-            <param name="action">Action run upon updating the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnInputAction(System.String,System.Action{Ladybug.UserInput.InputActionEventArgs})">
+        <member name="M:Ladybug.Scene.SetInputAction(System.String,System.Action{Ladybug.UserInput.InputActionEventArgs})">
             <summary>
             Sets the action to be performed upon a specific input action
             </summary>
@@ -521,35 +520,12 @@
             <param name="action"></param>
             <returns></returns>
         </member>
-        <member name="M:Ladybug.Scene.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime})">
-            <summary>
-            Sets the action that is run every frame when
-            the Scene Draws to the screen
-            </summary>
-            <param name="action">Action run upon drawing the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnUnload(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene
-            is unloaded
-            </summary>
-            <param name="action">Action run upon unloading the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.Unload">
+        <member name="M:Ladybug.Scene.UnloadScene">
             <summary>
             Unloads the Scene, removing it from the <see cref="T:Ladybug.Game"/> instance that is managing it
             </summary>
         </member>
-        <member name="M:Ladybug.Scene.OnPause(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene is paused
-            </summary>
-            <param name="action">Action run upon pausing the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.Pause">
+        <member name="M:Ladybug.Scene.PauseScene">
             <summary>
             Pauses the Scene
             </summary>
@@ -558,14 +534,7 @@
             but will still execute Draw actions
             </remarks>
         </member>
-        <member name="M:Ladybug.Scene.OnUnpause(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene is unpaused
-            </summary>
-            <param name="action">Action run upon unpausing the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.Unpause">
+        <member name="M:Ladybug.Scene.UnpauseScene">
             <summary>
             Unpauses the Scene
             </summary>
@@ -574,14 +543,7 @@
             only if state was previously PAUSED
             </remarks>
         </member>
-        <member name="M:Ladybug.Scene.OnSuspend(System.Action)">
-            <summary>
-            Sets the action that is run when the scene is suspended
-            </summary>
-            <param name="action">Action run upon suspending the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.Suspend">
+        <member name="M:Ladybug.Scene.SuspendScene">
             <summary>
             Suspends the Scene
             </summary>
@@ -590,15 +552,7 @@
             Update or Draw actions
             </remarks>
         </member>
-        <member name="M:Ladybug.Scene.OnUnsuspend(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene is
-            unsuspended
-            </summary>
-            <param name="action">Action run upon unsuspending the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.Unsuspend">
+        <member name="M:Ladybug.Scene.UnsuspendScene">
             <summary>
             Unsuspends the Scene
             </summary>
@@ -606,22 +560,6 @@
             Returns the Scene to ACTIVE state,
             only if state was previously SUSPENDED
             </remarks>
-        </member>
-        <member name="M:Ladybug.Scene.OnStop(System.Action)">
-            <summary>
-            Sets the action that run when the Scene is
-            paused or suspended
-            </summary>
-            <param name="action">Action run upon pausing or suspending the Scene</param>
-            <returns>Scene</returns>
-        </member>
-        <member name="M:Ladybug.Scene.OnResume(System.Action)">
-            <summary>
-            Sets the action that is run when the Scene is
-            unpaused or unsuspended
-            </summary>
-            <param name="action"></param>
-            <returns>Scene</returns>
         </member>
         <member name="T:Ladybug.Transform">
             <summary>
@@ -854,11 +792,6 @@
             ICollision objects to get CollisionResults
             </summary>
         </member>
-        <member name="T:Ladybug.ECS.BasicComponentSystem">
-            <summary>
-            ComponentSystem responsible for processing basic <see cref="T:Ladybug.ECS.Component"/>s
-            </summary>
-        </member>
         <member name="T:Ladybug.ECS.Component">
             <summary>
             A Component that can be registered and managed
@@ -932,6 +865,18 @@
             are drawn earlier than those with a larger value
             </remarks>
         </member>
+        <member name="P:Ladybug.ECS.Component.Initialized">
+            <summary>
+            Whether this Component has been initialized
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.ECS.Component.Compose">
+            <summary>
+            Begin inline composition of a Component
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Ladybug.ECS.Component.CheckRunUpdate">
             <summary>
             Determines whether to Update this component each frame
@@ -950,47 +895,102 @@
             By default, checks that <see cref="P:Ladybug.ECS.Component.Visible"/> and <see cref="P:Ladybug.ECS.Entity.Visible"/> are true
             </remarks>
         </member>
-        <member name="M:Ladybug.ECS.Component.OnInitialize(System.Action)">
+        <member name="M:Ladybug.ECS.Component.PreUpdate(Microsoft.Xna.Framework.GameTime)">
             <summary>
-            Defines this Component's behavior upon initialization
+            Run immediately before Update
             </summary>
-            <param name="action">Action to be performed by this Component upon initialization</param>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.ECS.Component.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Run when this component is Updated by the ECS
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.ECS.Component.PostUpdate(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Run immediately after Update
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.ECS.Component.PreDraw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Run immediately before Draw
+            </summary>
+            <param name="gameTime"></param>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="M:Ladybug.ECS.Component.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Run when the ECS Draws this Component
+            </summary>
+            <param name="gameTime"></param>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="M:Ladybug.ECS.Component.PostDraw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Run immediately after Draw
+            </summary>
+            <param name="gameTime"></param>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.ECS.Components.ComposedComponentSystem">
+            <summary>
+            ComponentSystem responsible for processing <see cref="T:Ladybug.ECS.Components.ComposedComponent"/> Components
+            </summary>
+        </member>
+        <member name="T:Ladybug.ECS.Components.ComposedComponent">
+            <summary>
+            Inline-composable ECS Component
+            </summary>
+        </member>
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnInitialize(System.Action)">
+            <summary>
+            Sets this Component's Initialize behavior
+            </summary>
+            <param name="action"></param>
             <returns></returns>
         </member>
-        <member name="M:Ladybug.ECS.Component.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnPreUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
             <summary>
-            Defines this Component's behavior upon updating
+            Sets this Component's PreUpdate behavior
             </summary>
-            <param name="action">Action to be performed by this Component upon each update</param>
-            <returns></returns>
-            <remarks>
-            This overload sets the action taken during the "Update" Update step
-            </remarks>
-        </member>
-        <member name="M:Ladybug.ECS.Component.OnUpdate(System.String,System.Action{Microsoft.Xna.Framework.GameTime})">
-            <summary>
-            Defines this Component's behavior upon the given update step
-            </summary>
-            <param name="step">Update step on which the given action will be performed</param>
-            <param name="action">Action to perform on the given Update step</param>
+            <param name="action"></param>
             <returns></returns>
         </member>
-        <member name="M:Ladybug.ECS.Component.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})">
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
             <summary>
-            Defines this Component's behavior upon being drawn
+            Sets this Component's Update behavior
             </summary>
-            <param name="action">Action to be performed by this Component upon each draw call</param>
+            <param name="action"></param>
             <returns></returns>
-            <remarks>
-            This overload sets the action taken upon the "Draw" Draw step
-            </remarks>
         </member>
-        <member name="M:Ladybug.ECS.Component.OnDraw(System.String,System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})">
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnPostUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
             <summary>
-            Defines this Component's behavior upon the given draw step
+            Sets this Component's PostUpdate behavior
             </summary>
-            <param name="step">Draw step on which the given action will be performed</param>
-            <param name="action">Action to perform on the given Draw step</param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnPreDraw(System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})">
+            <summary>
+            Sets this Component's PreDraw behavior
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnDraw(System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})">
+            <summary>
+            Sets this Component's Draw behavior
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.ECS.Components.ComposedComponent.OnPostDraw(System.Action{Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch})">
+            <summary>
+            Sets this Component's PostDraw behavior
+            </summary>
+            <param name="action"></param>
             <returns></returns>
         </member>
         <member name="T:Ladybug.ECS.Components.SpriteComponentSystem">
@@ -1001,11 +1001,6 @@
         <member name="T:Ladybug.ECS.Components.SpriteComponent">
             <summary>
             Ladybug standard component for sprites
-            </summary>
-        </member>
-        <member name="M:Ladybug.ECS.Components.SpriteComponent.#ctor">
-            <summary>
-            Creates a new SpriteComponent instance
             </summary>
         </member>
         <member name="P:Ladybug.ECS.Components.SpriteComponent.Sprite">
@@ -1065,6 +1060,24 @@
             </summary>
             <param name="animationName"></param>
         </member>
+        <member name="M:Ladybug.ECS.Components.SpriteComponent.Initialize">
+            <summary>
+            Initializes the SpriteComponent
+            </summary>
+        </member>
+        <member name="M:Ladybug.ECS.Components.SpriteComponent.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Called every frame
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.ECS.Components.SpriteComponent.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the SpriteComponent
+            </summary>
+            <param name="gameTime"></param>
+            <param name="spriteBatch"></param>
+        </member>
         <member name="T:Ladybug.ECS.ComponentSystem`1">
             <summary>
             A System responsible for processing <see cref="T:Ladybug.ECS.Component"/> 
@@ -1089,20 +1102,18 @@
             </summary>
             <param name="component"></param>
         </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.Update(System.String,Microsoft.Xna.Framework.GameTime)">
+        <member name="M:Ladybug.ECS.ComponentSystem`1.Update(Microsoft.Xna.Framework.GameTime)">
             <summary>
-            Run an Update step for all <see cref="T:Ladybug.ECS.Component"/>
+            Update all <see cref="T:Ladybug.ECS.Component"/>
             instances registered with this ComponentSystem
             </summary>
-            <param name="step">Update step to run</param>
             <param name="gameTime"></param>
         </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.Draw(System.String,Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+        <member name="M:Ladybug.ECS.ComponentSystem`1.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
             <summary>
-            Run a Draw step for all <see cref="T:Ladybug.ECS.Component"/>
+            Draw all <see cref="T:Ladybug.ECS.Component"/>
             instances registered with this ComponentSystem
             </summary>
-            <param name="step">Draw step to run</param>
             <param name="gameTime"></param>
             <param name="spriteBatch"></param>
         </member>
@@ -1148,9 +1159,24 @@
             which Components
             </summary>
         </member>
+        <member name="F:Ladybug.ECS.ECS._preUpdateMethods">
+            <summary>
+            Dictionary of PreUpdate methods called when this ECS is Updated
+            </summary>
+        </member>
         <member name="F:Ladybug.ECS.ECS._updateMethods">
             <summary>
             Dictionary of Update methods called when this ECS is Updated
+            </summary>
+        </member>
+        <member name="F:Ladybug.ECS.ECS._postUpdateMethods">
+            <summary>
+            Dictionary of PostUpdate methods called when this ECS is Updated
+            </summary>
+        </member>
+        <member name="F:Ladybug.ECS.ECS._preDrawMethods">
+            <summary>
+            Dictionary of PreDraw methods called when this ECS is Drawn
             </summary>
         </member>
         <member name="F:Ladybug.ECS.ECS._drawMethods">
@@ -1158,14 +1184,9 @@
             Dictionary of Draw methods called when this ECS is Drawn
             </summary>
         </member>
-        <member name="F:Ladybug.ECS.ECS._updateSteps">
+        <member name="F:Ladybug.ECS.ECS._postDrawMethods">
             <summary>
-            List of individual steps that are executed, in given order, during Update
-            </summary>
-        </member>
-        <member name="F:Ladybug.ECS.ECS._drawSteps">
-            <summary>
-            List of individual steps that are executed, in given order, during Draw
+            Dictionary of PostDraw methods called when this ECS is Drawn
             </summary>
         </member>
         <member name="M:Ladybug.ECS.ECS.RegisterComponentSystem``2">
@@ -1239,50 +1260,6 @@
             </summary>
             <typeparam name="T">Type of <see cref="T:Ladybug.ECS.Component"/> to find</typeparam>
             <returns>List of all found Components</returns>
-        </member>
-        <member name="M:Ladybug.ECS.ECS.AddUpdateStep(System.String,System.Int32)">
-            <summary>
-            Adds a step to this ECS's update process
-            </summary>
-            <param name="step">Name of step to be added</param>
-            <param name="index">
-            Position of step in update process. Appends the step to 
-            the end of the process if set to -1 or not specified
-            </param>
-        </member>
-        <member name="M:Ladybug.ECS.ECS.SetUpdateSteps(System.Collections.Generic.List{System.String})">
-            <summary>
-            Defines the update steps used by this ECS
-            </summary>
-            <param name="steps">List of update steps to be used by this ECS</param>
-        </member>
-        <member name="M:Ladybug.ECS.ECS.SetUpdateSteps(System.String[])">
-            <summary>
-            Defines the update steps used by this ECS
-            </summary>
-            <param name="steps">List of update steps to be used by this ECS</param>
-        </member>
-        <member name="M:Ladybug.ECS.ECS.AddDrawStep(System.String,System.Int32)">
-            <summary>
-            Adds a step to this ECS's draw process
-            </summary>
-            <param name="step">Name of draw step to be added</param>
-            <param name="index">
-            Position of step in draw process. Appends the step to 
-            the end of the process if set to -1 or not specified
-            </param>
-        </member>
-        <member name="M:Ladybug.ECS.ECS.SetDrawSteps(System.Collections.Generic.List{System.String})">
-            <summary>
-            Defines the draw steps used by this ECS
-            </summary>
-            <param name="steps">List of draw steps to be used by this ECS</param>
-        </member>
-        <member name="M:Ladybug.ECS.ECS.SetDrawSteps(System.String[])">
-            <summary>
-            Defines the draw steps used by this ECS
-            </summary>
-            <param name="steps">List of draw steps to be used by this ECS</param>
         </member>
         <member name="M:Ladybug.ECS.ECS.Update(Microsoft.Xna.Framework.GameTime)">
             <summary>
@@ -1394,6 +1371,14 @@
             </param>
             <returns>Entity</returns>
         </member>
+        <member name="M:Ladybug.ECS.Entity.AddComponent(Ladybug.ECS.Component)">
+            <summary>
+            Adds an existing <see cref="T:Ladybug.ECS.Component"/> instance to
+            this Entity
+            </summary>
+            <param name="component"></param>
+            <returns></returns>
+        </member>
         <member name="M:Ladybug.ECS.Entity.TryGetComponent``1(``0@)">
             <summary>
             Attempts to retrieve a <see cref="T:Ladybug.ECS.Component"/>
@@ -1430,6 +1415,37 @@
             <typeparam name="T">Type of <see cref="T:Ladybug.ECS.Component"/> to retrieve</typeparam>
             <returns>Matching <see cref="T:Ladybug.ECS.Component"/> if found, otherwise null</returns>
         </member>
+        <member name="T:Ladybug.FSM.ComposedState">
+            <summary>
+            A State that can be composed inline
+            </summary>
+        </member>
+        <member name="M:Ladybug.FSM.ComposedState.OnEnter(System.Action)">
+            <summary>
+            Sets the behavior of this State when
+            this becomes the active
+            state of a <see cref="T:Ladybug.FSM.StateMachine"/>
+            </summary>
+            <param name="action">Action defining OnEnter behavior</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.FSM.ComposedState.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
+            <summary>
+            Sets the behavior of this State when
+            its <see cref="T:Ladybug.FSM.StateMachine"/> is updated
+            </summary>
+            <param name="action">Action defining OnUpdate behavior</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.FSM.ComposedState.OnExit(System.Action)">
+            <summary>
+            Sets the behavior of this State when
+            a <see cref="T:Ladybug.FSM.StateMachine"/> replaces this State with
+            another State
+            </summary>
+            <param name="action">Action defining OnExit behavior</param>
+            <returns></returns>
+        </member>
         <member name="T:Ladybug.FSM.State">
             <summary>
             A State that can be processed by a
@@ -1448,44 +1464,27 @@
             active state
             </summary>
         </member>
-        <member name="M:Ladybug.FSM.State.#ctor">
+        <member name="M:Ladybug.FSM.State.Compose">
             <summary>
-            Creates a new State
+            Begin inline composing of a new State
             </summary>
-        </member>
-        <member name="M:Ladybug.FSM.State.#ctor(Ladybug.FSM.State)">
-            <summary>
-            Crates a new State,
-            copying the behavior of the provided
-            state
-            </summary>
-            <param name="template">Template State</param>
-        </member>
-        <member name="M:Ladybug.FSM.State.OnEnter(System.Action)">
-            <summary>
-            Sets the behavior of this State when
-            this becomes the active
-            state of a <see cref="T:Ladybug.FSM.StateMachine"/>
-            </summary>
-            <param name="action">Action defining OnEnter behavior</param>
             <returns></returns>
         </member>
-        <member name="M:Ladybug.FSM.State.OnUpdate(System.Action{Microsoft.Xna.Framework.GameTime})">
+        <member name="M:Ladybug.FSM.State.Enter">
             <summary>
-            Sets the behavior of this State when
-            its <see cref="T:Ladybug.FSM.StateMachine"/> is updated
+            Method called when a StateMachine enters this State
             </summary>
-            <param name="action">Action defining OnUpdate behavior</param>
-            <returns></returns>
         </member>
-        <member name="M:Ladybug.FSM.State.OnExit(System.Action)">
+        <member name="M:Ladybug.FSM.State.Update(Microsoft.Xna.Framework.GameTime)">
             <summary>
-            Sets the behavior of this State when
-            a <see cref="T:Ladybug.FSM.StateMachine"/> replaces this State with
-            another State
+            Method called each frame a StateMachine is in this State
             </summary>
-            <param name="action">Action defining OnExit behavior</param>
-            <returns></returns>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.FSM.State.Exit">
+            <summary>
+            Method called when a StateMachine exits this State
+            </summary>
         </member>
         <member name="T:Ladybug.FSM.StateMachine">
             <summary>

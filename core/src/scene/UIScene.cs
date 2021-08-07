@@ -1,3 +1,4 @@
+/*
 using System;
 
 using Microsoft.Xna.Framework;
@@ -19,12 +20,16 @@ public class UIScene : Scene
 	{
 		var ui = new UI(this);
 
-		var inline = new Control()
+		var inline = Control.Compose()
 			.OnAttach((Control parent) => { Console.WriteLine("Inline component attached"); })
 			.OnUpdate(() => { Console.WriteLine("Inline control updated!"); });
 
 		ui.AddControl<TestControl>()
-			.AddControl(inline);
+			.AddControl(inline)
+			.AddControl(
+				Control.Compose()
+					.OnAttach((Control parent) => Console.WriteLine("Inline-composed control attached"))
+				);
 
 		return ui;
 	}
@@ -34,3 +39,4 @@ public class UIScene : Scene
 		_ui.Update();
 	}
 }
+*/
