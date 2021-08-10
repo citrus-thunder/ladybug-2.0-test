@@ -30,6 +30,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Ladybug.Beta.UI.Button.TextColor">
+            <summary>
+            The color of the Button's text
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Ladybug.Beta.UI.Button.Font">
             <summary>
             The Button's font
@@ -137,7 +143,13 @@
         </member>
         <member name="E:Ladybug.Beta.UI.Control.Clicked">
             <summary>
-            The Control has been Clicked
+            The Control has been clicked
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.Control.ClickedOut">
+            <summary>
+            The control is in focus, but a space it does 
+            not occupy has been clicked
             </summary>
         </member>
         <member name="E:Ladybug.Beta.UI.Control.Focused">
@@ -208,6 +220,11 @@
         <member name="P:Ladybug.Beta.UI.Control.Game">
             <summary>
             This control's managing game
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.Control.HasFocus">
+            <summary>
+            Whether the Control currently has focus
             </summary>
         </member>
         <member name="P:Ladybug.Beta.UI.Control.BlockCursor">
@@ -341,6 +358,12 @@
             Called when this Control is clicked
             </summary>
             <param name="state"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.Control.ClickOut">
+            <summary>
+            Called when this Control is in focus,
+            but a space outside its bounds has been clicked
+            </summary>
         </member>
         <member name="M:Ladybug.Beta.UI.Control.Focus">
             <summary>
@@ -511,6 +534,106 @@
             </summary>
             <param name="spriteBatch"></param>
         </member>
+        <member name="T:Ladybug.Beta.UI.TextBoxResources">
+            <summary>
+            Static class containing unique resource keys for TextBoxes
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.TextBoxResources.DefaultBackground">
+            <summary>
+            Unique string key for default TextBox background
+            </summary>
+        </member>
+        <member name="F:Ladybug.Beta.UI.TextBoxResources.DefaultFont">
+            <summary>
+            Unique string key for default TextBox font
+            </summary>
+        </member>
+        <member name="T:Ladybug.Beta.UI.TextBox">
+            <summary>
+            Ladybug base text input control
+            </summary>
+        </member>
+        <member name="E:Ladybug.Beta.UI.TextBox.Submitted">
+            <summary>
+            Text content has been submitted
+            </summary>
+        </member>
+        <member name="P:Ladybug.Beta.UI.TextBox.Text">
+            <summary>
+            The TextBox's text content
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.TextBox.TextOffset">
+            <summary>
+            Label text offset from top-left corner of TextBox bounds
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.TextBox.TextColor">
+            <summary>
+            Color of the TextBox's text content
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.TextBox.Font">
+            <summary>
+            Font used by the TextBox's text content
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.TextBox.SubmitKey">
+            <summary>
+            Key used to submit TextBox content
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.Beta.UI.TextBox.MaxCharacters">
+            <summary>
+            Maximum character limit
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.Initialize">
+            <summary>
+            Called when the TextBox is initialized
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.Click(Ladybug.UserInput.InputState)">
+            <summary>
+            Called when the TextBox is clicked on
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.Focus">
+            <summary>
+            Called when the TextBox gains focus
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.ClickOut">
+            <summary>
+            Called when the TextBox has focus, but an
+            area outside its bounds is clicked
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.Unfocus">
+            <summary>
+            Called when the TextBox loses focus
+            </summary>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Called when the TextBox's bounds are updated
+            </summary>
+            <param name="oldBounds"></param>
+            <param name="newBounds"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.TextBox.ClearText">
+            <summary>
+            Clears the TextBox's text content
+            </summary>
+        </member>
         <member name="T:Ladybug.Beta.UI.UIResources">
             <summary>
             Static class containing resource keys for common UI resources
@@ -583,6 +706,17 @@
             Registers a Control to be managed by this UI
             </summary>
             <param name="control"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.SetFocus(Ladybug.Beta.UI.Control)">
+            <summary>
+            Sets the UI's focused control
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:Ladybug.Beta.UI.UI.ClearFocus">
+            <summary>
+            Clear's the UI's focused control
+            </summary>
         </member>
         <member name="M:Ladybug.Beta.UI.UI.Update">
             <summary>
@@ -1623,52 +1757,6 @@
             <param name="gameTime"></param>
             <param name="spriteBatch"></param>
         </member>
-        <member name="T:Ladybug.ECS.ComponentSystem`1">
-            <summary>
-            A System responsible for processing <see cref="T:Ladybug.ECS.Component"/> 
-            update and draw behavior
-            </summary>
-            <typeparam name="T">
-            Type of <see cref="T:Ladybug.ECS.Component"/> this ComponentSystem
-            will process
-            </typeparam>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.RegisterComponent(`0)">
-            <summary>
-            Registers a <see cref="T:Ladybug.ECS.Component"/> to be
-            processed by this ComponentSystem
-            </summary>
-            <param name="component"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.DeregisterComponent(`0)">
-            <summary>
-            Removes a <see cref="T:Ladybug.ECS.Component"/> from
-            this ComponentSystem's process queues
-            </summary>
-            <param name="component"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.Update(Microsoft.Xna.Framework.GameTime)">
-            <summary>
-            Update all <see cref="T:Ladybug.ECS.Component"/>
-            instances registered with this ComponentSystem
-            </summary>
-            <param name="gameTime"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-            <summary>
-            Draw all <see cref="T:Ladybug.ECS.Component"/>
-            instances registered with this ComponentSystem
-            </summary>
-            <param name="gameTime"></param>
-            <param name="spriteBatch"></param>
-        </member>
-        <member name="M:Ladybug.ECS.ComponentSystem`1.RequestDrawSort">
-            <summary>
-            Requests the ComponentSystem to resort registered
-            <see cref="T:Ladybug.ECS.Component"/> instances by
-            their <see cref="P:Ladybug.ECS.Component.DrawPriority"/>
-            </summary>
-        </member>
         <member name="T:Ladybug.ECS.Components.ComposedComponentSystem">
             <summary>
             ComponentSystem responsible for processing <see cref="T:Ladybug.ECS.Components.ComposedComponent"/> Components
@@ -1812,6 +1900,52 @@
             </summary>
             <param name="gameTime"></param>
             <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.ECS.ComponentSystem`1">
+            <summary>
+            A System responsible for processing <see cref="T:Ladybug.ECS.Component"/> 
+            update and draw behavior
+            </summary>
+            <typeparam name="T">
+            Type of <see cref="T:Ladybug.ECS.Component"/> this ComponentSystem
+            will process
+            </typeparam>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.RegisterComponent(`0)">
+            <summary>
+            Registers a <see cref="T:Ladybug.ECS.Component"/> to be
+            processed by this ComponentSystem
+            </summary>
+            <param name="component"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.DeregisterComponent(`0)">
+            <summary>
+            Removes a <see cref="T:Ladybug.ECS.Component"/> from
+            this ComponentSystem's process queues
+            </summary>
+            <param name="component"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update all <see cref="T:Ladybug.ECS.Component"/>
+            instances registered with this ComponentSystem
+            </summary>
+            <param name="gameTime"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draw all <see cref="T:Ladybug.ECS.Component"/>
+            instances registered with this ComponentSystem
+            </summary>
+            <param name="gameTime"></param>
+            <param name="spriteBatch"></param>
+        </member>
+        <member name="M:Ladybug.ECS.ComponentSystem`1.RequestDrawSort">
+            <summary>
+            Requests the ComponentSystem to resort registered
+            <see cref="T:Ladybug.ECS.Component"/> instances by
+            their <see cref="P:Ladybug.ECS.Component.DrawPriority"/>
+            </summary>
         </member>
         <member name="T:Ladybug.ECS.ECS">
             <summary>

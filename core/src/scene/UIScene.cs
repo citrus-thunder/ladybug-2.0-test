@@ -27,7 +27,7 @@ public class UIScene : Scene
 		bool updateSuccessful = false;
 		var inline = Control.Compose()
 			.OnAttach((Control parent) => { Console.WriteLine("Inline component attached"); })
-			.OnUpdate(() => 
+			.OnUpdate(() =>
 			{
 				if (!updateSuccessful)
 				{
@@ -42,14 +42,20 @@ public class UIScene : Scene
 				Control.Compose()
 					.OnAttach((Control parent) => Console.WriteLine("Inline-composed control attached"))
 				)
-			.AddControl<Button>("test-button", out Button testButton);
+			.AddControl<Button>("test-button", out Button testButton)
+			.AddControl<TextBox>("test-textbox", out TextBox testTextBox);
+		
+		testTextBox.BackgroundTexture = ui.ResourceCatalog.GetResource<Texture2D>(UIResources.DefaultBackground);
+		testTextBox.SetBounds(300, 100, 32 * 6, 32 * 2);
+		testTextBox.TextOffset = new Vector2(20, 20);
 
 		testButton.SetBounds(100, 100, 32 * 4, 32 * 2);
-		
+
 		Color defaultColor = Color.Black;
 		Color hoverColor = default(Color);
 
 		testButton.TextColor = defaultColor;
+		testTextBox.TextColor = defaultColor;
 
 		if (Colors.TryParseColor("#525252", out Color color))
 		{
