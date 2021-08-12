@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using Ladybug;
-using Ladybug.Beta.UI;
+using Ladybug.UI;
 using Ladybug.UserInput;
 
 using Colors = Ladybug.Graphics.ColorExtensions;

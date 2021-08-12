@@ -1,6 +1,6 @@
 using System;
 
-using Ladybug.Beta.UI;
+using Ladybug.UI;
 
 public class TestControl : Control
 {
