@@ -81,6 +81,8 @@ public class UIScene : Scene
 			if (state == InputState.Released)
 			{
 				Console.WriteLine("Test Button Clicked!");
+				testTextBox.Active = !testTextBox.Active;
+				testTextBox.Visible = !testTextBox.Visible;
 			}
 		};
 

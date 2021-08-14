@@ -592,6 +592,9 @@
             <summary>
             Run when the Scene is unloaded
             </summary>
+            <remarks>
+            To unload the scene, use <see cref="M:Ladybug.Scene.UnloadScene"/> instead
+            </remarks>
         </member>
         <member name="M:Ladybug.Scene.PauseScene">
             <summary>
@@ -606,6 +609,9 @@
             <summary>
             Run when the Scene is paused
             </summary>
+            <remarks>
+            To pause the scene, use <see cref="M:Ladybug.Scene.PauseScene"/> instead
+            </remarks>
         </member>
         <member name="M:Ladybug.Scene.UnpauseScene">
             <summary>
@@ -620,6 +626,9 @@
             <summary>
             Run when the Scene is unpaused
             </summary>
+            <remarks>
+            To unpause the scene, use <see cref="M:Ladybug.Scene.UnpauseScene"/> instead
+            </remarks>
         </member>
         <member name="M:Ladybug.Scene.SuspendScene">
             <summary>
@@ -634,6 +643,9 @@
             <summary>
             Run when the scene is suspended
             </summary>
+            <remarks>
+            To suspend the scene, use <see cref="M:Ladybug.Scene.SuspendScene"/> instead
+            </remarks>
         </member>
         <member name="M:Ladybug.Scene.UnsuspendScene">
             <summary>
@@ -648,16 +660,25 @@
             <summary>
             Run when the scene is unsuspended
             </summary>
+            <remarks>
+            To unsuspend the scene, use <see cref="M:Ladybug.Scene.UnsuspendScene"/> instead
+            </remarks>
         </member>
         <member name="M:Ladybug.Scene.Stop">
             <summary>
             Run when the scene is paused or suspended
             </summary>
+            <remarks>
+            To stop the scene, use <see cref="M:Ladybug.Scene.PauseScene"/> or <see cref="M:Ladybug.Scene.SuspendScene"/> instead
+            </remarks>
         </member>
         <member name="M:Ladybug.Scene.Resume">
             <summary>
             Run when the scene is unpaused or unsuspended
             </summary>
+            <remarks>
+            To resum the scene, use <see cref="M:Ladybug.Scene.UnpauseScene"/> or <see cref="M:Ladybug.Scene.UnsuspendScene"/> instead
+            </remarks>
         </member>
         <member name="T:Ladybug.Transform">
             <summary>
@@ -1171,17 +1192,15 @@
             </summary>
             <param name="sprite"></param>
         </member>
-        <member name="M:Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Ladybug.Graphics.SpriteAtlas,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+        <member name="M:Ladybug.ECS.Components.SpriteComponent.AddAnimation(System.String,Ladybug.Graphics.SpriteAtlas,System.Int32,System.Int32,System.Int32,System.Boolean)">
             <summary>
             Adds a new Animation to this SpriteComponent
             </summary>
             <param name="animationName">Name of the new Animation</param>
             <param name="sourceAtlas">Source <see cref="T:Ladybug.Graphics.SpriteAtlas"/></param>
-            <param name="rows">Rows in the source texture</param>
-            <param name="columns">Columns in the source texture</param>
-            <param name="animationSpeed">Speed of the animation</param>
             <param name="startFrame">First frame of the animation</param>
             <param name="endFrame">Last frame of the animation</param>
+            <param name="animationSpeed">Speed of the animation</param>
             <param name="setDefault">
             Whether to set this animation as the SpriteComponent's default
             animation
@@ -2277,6 +2296,20 @@
             <param name="action"></param>
             <returns></returns>
         </member>
+        <member name="M:Ladybug.UI.ComposedControl.OnToggleVisible(System.Action{System.Boolean})">
+            <summary>
+            Action run when this Control's <see cref="P:Ladybug.UI.Control.Visible"/> property is updated
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.UI.ComposedControl.OnToggleActive(System.Action{System.Boolean})">
+            <summary>
+            Action run when this Control's <see cref="P:Ladybug.UI.Control.Active"/> property is updated
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
         <member name="M:Ladybug.UI.ComposedControl.OnUpdate(System.Action)">
             <summary>
             Action run when this Control is updated each frame
@@ -2381,6 +2414,18 @@
             <summary>
             Whether the Control currently has focus
             </summary>
+        </member>
+        <member name="P:Ladybug.UI.Control.Active">
+            <summary>
+            Whether the Control is currently active
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.UI.Control.Visible">
+            <summary>
+            Whether the Control is currently visible
+            </summary>
+            <value></value>
         </member>
         <member name="P:Ladybug.UI.Control.BlockCursor">
             <summary>
@@ -2547,6 +2592,18 @@
             <param name="oldBounds"></param>
             <param name="newBounds"></param>
         </member>
+        <member name="M:Ladybug.UI.Control.ToggleVisible(System.Boolean)">
+            <summary>
+            Called when this Control's <see cref="P:Ladybug.UI.Control.Visible"/> property is changed
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Ladybug.UI.Control.ToggleActive(System.Boolean)">
+            <summary>
+            Called when this Control's <see cref="P:Ladybug.UI.Control.Active"/> property is changed
+            </summary>
+            <param name="value"></param>
+        </member>
         <member name="M:Ladybug.UI.Control.Update">
             <summary>
             Called when this Control is updated each frame
@@ -2682,6 +2739,18 @@
             </summary>
             <param name="oldBounds">The Panel's previous bounds</param>
             <param name="newBounds">The Panel's new bounds</param>
+        </member>
+        <member name="M:Ladybug.UI.Panel.ToggleActive(System.Boolean)">
+            <summary>
+            Called when the Panel's <see cref="P:Ladybug.UI.Control.Active"/> property is updated
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Ladybug.UI.Panel.ToggleVisible(System.Boolean)">
+            <summary>
+            Called when the Panel's <see cref="P:Ladybug.UI.Control.Visible"/> property is updated
+            </summary>
+            <param name="value"></param>
         </member>
         <member name="M:Ladybug.UI.Panel.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
             <summary>
