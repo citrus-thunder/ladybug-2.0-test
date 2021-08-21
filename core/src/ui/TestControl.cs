@@ -4,7 +4,7 @@ using Ladybug.UI;
 
 public class TestControl : Control
 {
-	protected override void Attach(Control parentControl)
+	protected override void Attach(IControlContainer parentControl)
 	{
 		Console.WriteLine("Test control attached!");
 	}

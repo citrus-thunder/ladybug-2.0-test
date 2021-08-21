@@ -2240,16 +2240,9 @@
             <param name="action"></param>
             <returns></returns>
         </member>
-        <member name="M:Ladybug.UI.ComposedControl.OnAttach(System.Action{Ladybug.UI.Control})">
+        <member name="M:Ladybug.UI.ComposedControl.OnAttach(System.Action{Ladybug.UI.IControlContainer})">
             <summary>
             Sets the action run when this Control is attached to a parent control
-            </summary>
-            <param name="action"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Ladybug.UI.ComposedControl.OnAddChild(System.Action{Ladybug.UI.Control})">
-            <summary>
-            Action run when a child control is attached to this Control
             </summary>
             <param name="action"></param>
             <returns></returns>
@@ -2370,12 +2363,6 @@
             Reference to the managing UI's ResourceCatalog
             </summary>
         </member>
-        <member name="P:Ladybug.UI.Control.Item(System.String)">
-            <summary>
-            Access one of this Control's children by name
-            </summary>
-            <value></value>
-        </member>
         <member name="P:Ladybug.UI.Control.Name">
             <summary>
             Name of this Control
@@ -2385,12 +2372,6 @@
         <member name="P:Ladybug.UI.Control.Parent">
             <summary>
             This Control's parent Control
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Ladybug.UI.Control.Children">
-            <summary>
-            This Control's Children
             </summary>
             <value></value>
         </member>
@@ -2463,38 +2444,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Ladybug.UI.Control.AddControl``1(System.String)">
-            <summary>
-            Adds a new child Control of type T to this Control
-            </summary>
-            <param name="name">Name of the new Control</param>
-            <typeparam name="T">Type of the new Control</typeparam>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="M:Ladybug.UI.Control.AddControl``1(``0@)">
-            <summary>
-            Adds a new child Control of type T to this Control
-            </summary>
-            <param name="control">Reference to the new Control</param>
-            <typeparam name="T">Type of the new Control</typeparam>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="M:Ladybug.UI.Control.AddControl``1(System.String,``0@)">
-            <summary>
-            Adds a new child Control of type T to this Control
-            </summary>
-            <param name="name">Name of the new Control</param>
-            <param name="control">Reference to the new Control</param>
-            <typeparam name="T">Type of the new Control</typeparam>
-            <returns>Reference to the current Control</returns>
-        </member>
-        <member name="M:Ladybug.UI.Control.AddControl(Ladybug.UI.Control)">
-            <summary>
-            Adds an existing Control as a child of this Control
-            </summary>
-            <param name="control">Control to add as a child of this Control</param>
-            <returns>Reference to the current Control</returns>
-        </member>
         <member name="M:Ladybug.UI.Control.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             Sets the Control's Bounds
@@ -2541,17 +2490,11 @@
             Called when the Control is Initialized
             </summary>
         </member>
-        <member name="M:Ladybug.UI.Control.Attach(Ladybug.UI.Control)">
+        <member name="M:Ladybug.UI.Control.Attach(Ladybug.UI.IControlContainer)">
             <summary>
             Called when the Control is attached to a parent control
             </summary>
             <param name="parentControl"></param>
-        </member>
-        <member name="M:Ladybug.UI.Control.AddChild(Ladybug.UI.Control)">
-            <summary>
-            Called when a child control is attached to this Control
-            </summary>
-            <param name="childControl"></param>
         </member>
         <member name="M:Ladybug.UI.Control.Click(Ladybug.UserInput.InputState)">
             <summary>
@@ -2615,6 +2558,85 @@
             </summary>
             <param name="spriteBatch"></param>
         </member>
+        <member name="T:Ladybug.UI.ControlContainer">
+            <summary>
+            Base class for Control container UI components
+            </summary>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.#ctor">
+            <summary>
+            Creates a new ControlContainer
+            </summary>
+        </member>
+        <member name="P:Ladybug.UI.ControlContainer.Item(System.String)">
+            <summary>
+            Access one of this Control's children by name
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.UI.ControlContainer.Controls">
+            <summary>
+            List of Controls within this container
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.FindControl``1(System.String)">
+            <summary>
+            Finds a control within this container
+            </summary>
+            <param name="name"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.AddControl``1(System.String)">
+            <summary>
+            Adds a new child Control of type T to this Control
+            </summary>
+            <param name="name">Name of the new Control</param>
+            <typeparam name="T">Type of the new Control</typeparam>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.AddControl``1(``0@)">
+            <summary>
+            Adds a new child Control of type T to this Control
+            </summary>
+            <param name="control">Reference to the new Control</param>
+            <typeparam name="T">Type of the new Control</typeparam>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.AddControl``1(System.String,``0@)">
+            <summary>
+            Adds a new child Control of type T to this Control
+            </summary>
+            <param name="name">Name of the new Control</param>
+            <param name="control">Reference to the new Control</param>
+            <typeparam name="T">Type of the new Control</typeparam>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.AddControl(Ladybug.UI.Control)">
+            <summary>
+            Adds an existing Control as a child of this Control
+            </summary>
+            <param name="control">Control to add as a child of this Control</param>
+            <returns>Reference to the current Control</returns>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.AddChild(Ladybug.UI.Control)">
+            <summary>
+            Called when a child control is attached to this Control
+            </summary>
+            <param name="childControl"></param>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.Update">
+            <summary>
+            Updates this container and its controls each frame
+            </summary>
+        </member>
+        <member name="M:Ladybug.UI.ControlContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws this container and its controls each frame
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
         <member name="T:Ladybug.UI.TextureType">
             <summary>
             Type of texture, Map or Basic
@@ -2629,6 +2651,23 @@
             <summary>
             9-slice texture map
             </summary>
+        </member>
+        <member name="T:Ladybug.UI.IControlContainer">
+            <summary>
+            Interface for objects which contain UI Controls
+            </summary>
+        </member>
+        <member name="P:Ladybug.UI.IControlContainer.UI">
+            <summary>
+            UI managing this container
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.UI.IControlContainer.Controls">
+            <summary>
+            Controls contained within this container
+            </summary>
+            <value></value>
         </member>
         <member name="T:Ladybug.UI.LabelResources">
             <summary>
@@ -2662,7 +2701,7 @@
         </member>
         <member name="M:Ladybug.UI.Label.Initialize">
             <summary>
-            Called when the button is initialized
+            Called when the label is initialized
             </summary>
         </member>
         <member name="M:Ladybug.UI.Label.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
@@ -2677,6 +2716,80 @@
             Called when the Label is drawn
             </summary>
             <param name="spriteBatch"></param>
+        </member>
+        <member name="T:Ladybug.UI.Margin">
+            <summary>
+            Ladybug UI Margin
+            </summary>
+            <remarks>
+            Used by some Ladybug UI controls to determine
+            margin values
+            </remarks>
+        </member>
+        <member name="F:Ladybug.UI.Margin.Zero">
+            <summary>
+            A margin with a zero value for all sides
+            </summary>
+        </member>
+        <member name="F:Ladybug.UI.Margin.Top">
+            <summary>
+            Top margin value
+            </summary>
+        </member>
+        <member name="F:Ladybug.UI.Margin.Right">
+            <summary>
+            Right margin value
+            </summary>
+        </member>
+        <member name="F:Ladybug.UI.Margin.Bottom">
+            <summary>
+            Bottom margin value
+            </summary>
+        </member>
+        <member name="F:Ladybug.UI.Margin.Left">
+            <summary>
+            Left margin value
+            </summary>
+        </member>
+        <member name="M:Ladybug.UI.Margin.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create new Margin
+            </summary>
+            <param name="top"></param>
+            <param name="right"></param>
+            <param name="bottom"></param>
+            <param name="left"></param>
+        </member>
+        <member name="M:Ladybug.UI.Margin.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create new Margin
+            </summary>
+            <param name="top"></param>
+            <param name="sides"></param>
+            <param name="bottom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.UI.Margin.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Create new Margin
+            </summary>
+            <param name="topBottom"></param>
+            <param name="sides"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.UI.Margin.#ctor(System.Int32)">
+            <summary>
+            Create new Margin
+            </summary>
+            <param name="margin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ladybug.UI.Margin.Equals(System.Object)">
+            <summary>
+            Checks if object is equivalent to this Margin
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
         </member>
         <member name="T:Ladybug.UI.PanelResources">
             <summary>
@@ -2728,6 +2841,18 @@
             Background property used by Draw()
             </summary>
         </member>
+        <member name="P:Ladybug.UI.Panel.VerticalAlignment">
+            <summary>
+            Panel's contents' vertical alignment
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.UI.Panel.HorizontalAlignment">
+            <summary>
+            Panel's contents' horizontal alignment
+            </summary>
+            <value></value>
+        </member>
         <member name="M:Ladybug.UI.Panel.Initialize">
             <summary>
             Called when the Panel is initialized, after it is attached to a parent control
@@ -2757,6 +2882,36 @@
             Called when the Panel is drawn
             </summary>
             <param name="spriteBatch"></param>
+        </member>
+        <member name="M:Ladybug.UI.StackPanel.#ctor">
+            <summary>
+            Creates a new StackPanel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Ladybug.UI.StackPanel.Separation">
+            <summary>
+            Space, in pixels, between the StackPanel's contents
+            </summary>
+            <value></value>
+        </member>
+        <member name="F:Ladybug.UI.StackPanel.Orientation">
+            <summary>
+            Orientation of the StackPanel's elements
+            </summary>
+        </member>
+        <member name="M:Ladybug.UI.StackPanel.GetBoxHandle">
+            <summary>
+            Gets the BoxHandle used when determining the anchor for placing the next
+            child control in UpdateLayout
+            </summary>
+        </member>
+        <member name="M:Ladybug.UI.StackPanel.UpdateBounds(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Called when the StackPanel's bounds are updated
+            </summary>
+            <param name="oldBounds"></param>
+            <param name="newBounds"></param>
         </member>
         <member name="T:Ladybug.UI.TextBoxResources">
             <summary>
@@ -2895,7 +3050,7 @@
             Control that is currently targeted by the cursor
             </summary>
         </member>
-        <member name="P:Ladybug.UI.UI.Controls">
+        <member name="P:Ladybug.UI.UI.AllControls">
             <summary>
             List of Controls managed by this UI
             </summary>
@@ -2914,6 +3069,14 @@
             <summary>
             This UI's resident ResourceCatalog
             </summary>
+        </member>
+        <member name="M:Ladybug.UI.UI.FindControl``1(System.String)">
+            <summary>
+            Locates a Control managed by this UI by name
+            </summary>
+            <param name="name"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
         </member>
         <member name="M:Ladybug.UI.UI.RequestSort">
             <summary>
@@ -2944,12 +3107,12 @@
         </member>
         <member name="M:Ladybug.UI.UI.Update">
             <summary>
-            Called when the UI is updated
+            Updates the UI and its components each frame
             </summary>
         </member>
         <member name="M:Ladybug.UI.UI.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
             <summary>
-            Called when the UI is drawn
+            Draws the UI and its components each frame
             </summary>
             <param name="spriteBatch"></param>
         </member>
@@ -3176,6 +3339,11 @@
             Top-left corner
             </summary>
         </member>
+        <member name="F:Ladybug.BoxHandle.TopCenter">
+            <summary>
+            Center of top edge
+            </summary>
+        </member>
         <member name="F:Ladybug.BoxHandle.TopRight">
             <summary>
             Top-right corner
@@ -3186,6 +3354,11 @@
             Bottom-left corner
             </summary>
         </member>
+        <member name="F:Ladybug.BoxHandle.BottomCenter">
+            <summary>
+            Center of bottom edge
+            </summary>
+        </member>
         <member name="F:Ladybug.BoxHandle.BottomRight">
             <summary>
             Bottom-right corner
@@ -3194,6 +3367,16 @@
         <member name="F:Ladybug.BoxHandle.Center">
             <summary>
             Center
+            </summary>
+        </member>
+        <member name="F:Ladybug.BoxHandle.LeftCenter">
+            <summary>
+            Center of left edge
+            </summary>
+        </member>
+        <member name="F:Ladybug.BoxHandle.RightCenter">
+            <summary>
+            Center of right edge
             </summary>
         </member>
         <member name="T:Ladybug.RectangleExtensions">

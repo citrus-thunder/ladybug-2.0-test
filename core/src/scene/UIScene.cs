@@ -26,7 +26,7 @@ public class UIScene : Scene
 
 		bool updateSuccessful = false;
 		var inline = Control.Compose()
-			.OnAttach((Control parent) => { Console.WriteLine("Inline component attached"); })
+			.OnAttach((IControlContainer parent) => { Console.WriteLine("Inline component attached"); })
 			.OnUpdate(() =>
 			{
 				if (!updateSuccessful)
@@ -40,10 +40,27 @@ public class UIScene : Scene
 			.AddControl(inline)
 			.AddControl(
 				Control.Compose()
-					.OnAttach((Control parent) => Console.WriteLine("Inline-composed control attached"))
+					.OnAttach((IControlContainer parent) => Console.WriteLine("Inline-composed control attached"))
 				)
 			.AddControl<Button>("test-button", out Button testButton)
-			.AddControl<TextBox>("test-textbox", out TextBox testTextBox);
+			.AddControl<TextBox>("test-textbox", out TextBox testTextBox)
+			.AddControl<StackPanel>("stack-panel", out StackPanel stackPanel);
+
+		stackPanel.AddControl<Button>("stackbutton1", out Button stackButton1)
+			.AddControl<Button>("stackbutton2", out Button stackButton2)
+			.AddControl<Button>("stackbutton3", out Button stackButton3);
+
+		stackButton1.Text = "Button 1";
+		stackButton1.SetBounds(100, 100, 32 * 4, 32 * 2);
+		stackButton2.Text = "Button 2";
+		stackButton2.SetBounds(100, 100, 32 * 4, 32 * 2);
+		stackButton3.Text = "Button 3";
+		stackButton3.SetBounds(100, 100, 32 * 4, 32 * 2);
+
+		stackPanel.Margin = new Margin(10);
+		stackPanel.Separation = 5;
+		stackPanel.SetBounds(200, 200, 32 * 10, 32 * 8);
+		stackPanel.BackgroundTexture = null;
 		
 		testTextBox.BackgroundTexture = ui.ResourceCatalog.GetResource<Texture2D>(UIResources.DefaultBackground);
 		testTextBox.SetBounds(300, 100, 32 * 6, 32 * 2);
