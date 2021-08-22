@@ -2669,6 +2669,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Ladybug.UI.IControlContainer.ZIndex">
+            <summary>
+            Z-Index depth of control
+            </summary>
+            <value></value>
+        </member>
         <member name="T:Ladybug.UI.LabelResources">
             <summary>
             Static class containing resource keys for common Label resources
