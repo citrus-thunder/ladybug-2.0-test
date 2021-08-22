@@ -50,6 +50,8 @@ public class UIScene : Scene
 			.AddControl<Button>("stackbutton2", out Button stackButton2)
 			.AddControl<Button>("stackbutton3", out Button stackButton3);
 
+		stackPanel.Orientation = Orientation.Horizontal;
+
 		stackButton1.Text = "Button 1";
 		stackButton1.SetBounds(100, 100, 32 * 4, 32 * 2);
 		stackButton2.Text = "Button 2";

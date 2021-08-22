@@ -2705,7 +2705,7 @@
             The Label's Font
             </summary>
         </member>
-        <member name="M:Ladybug.UI.Label.Initialize">
+        <member name="M:Ladybug.UI.Label.Attach(Ladybug.UI.IControlContainer)">
             <summary>
             Called when the label is initialized
             </summary>
@@ -2847,18 +2847,6 @@
             Background property used by Draw()
             </summary>
         </member>
-        <member name="P:Ladybug.UI.Panel.VerticalAlignment">
-            <summary>
-            Panel's contents' vertical alignment
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Ladybug.UI.Panel.HorizontalAlignment">
-            <summary>
-            Panel's contents' horizontal alignment
-            </summary>
-            <value></value>
-        </member>
         <member name="M:Ladybug.UI.Panel.Initialize">
             <summary>
             Called when the Panel is initialized, after it is attached to a parent control
@@ -2895,13 +2883,31 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:Ladybug.UI.StackPanel.VerticalAlignment">
+            <summary>
+            StackPanel's contents' vertical alignment
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.UI.StackPanel.HorizontalAlignment">
+            <summary>
+            StackPanel's contents' horizontal alignment
+            </summary>
+            <value></value>
+        </member>
         <member name="P:Ladybug.UI.StackPanel.Separation">
             <summary>
             Space, in pixels, between the StackPanel's contents
             </summary>
             <value></value>
         </member>
-        <member name="F:Ladybug.UI.StackPanel.Orientation">
+        <member name="P:Ladybug.UI.StackPanel.Margin">
+            <summary>
+            StackPanel's Margin
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Ladybug.UI.StackPanel.Orientation">
             <summary>
             Orientation of the StackPanel's elements
             </summary>
