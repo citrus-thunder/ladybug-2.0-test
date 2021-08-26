@@ -2178,6 +2178,23 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Ladybug.UI.AnimationFrame">
+            <summary>
+            UI Control containing an <see cref="T:Ladybug.Graphics.AnimationSequence"/>
+            </summary>
+        </member>
+        <member name="P:Ladybug.UI.AnimationFrame.Animation">
+            <summary>
+            AnimationSequence contained by this control
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.UI.AnimationFrame.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when the Control is drawn
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
         <member name="T:Ladybug.UI.ButtonResources">
             <summary>
             Static class containing unique resource keys for Buttons
@@ -2877,6 +2894,23 @@
             </summary>
             <param name="spriteBatch"></param>
         </member>
+        <member name="T:Ladybug.UI.SpriteFrame">
+            <summary>
+            UI Control containing a simple <see cref="T:Ladybug.Graphics.Sprite"/>
+            </summary>
+        </member>
+        <member name="P:Ladybug.UI.SpriteFrame.Sprite">
+            <summary>
+            Sprite contained by this SpriteFrame
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.UI.SpriteFrame.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when this Control is drawn
+            </summary>
+            <param name="spriteBatch"></param>
+        </member>
         <member name="M:Ladybug.UI.StackPanel.#ctor">
             <summary>
             Creates a new StackPanel
@@ -3024,6 +3058,23 @@
             <summary>
             Clears the TextBox's text content
             </summary>
+        </member>
+        <member name="T:Ladybug.UI.TextureFrame">
+            <summary>
+            UI Control containing a simple texture
+            </summary>
+        </member>
+        <member name="P:Ladybug.UI.TextureFrame.Texture">
+            <summary>
+            Image this TextureFrame contains
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Ladybug.UI.TextureFrame.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Called when this control is drawn
+            </summary>
+            <param name="spriteBatch"></param>
         </member>
         <member name="T:Ladybug.UI.UIResources">
             <summary>

@@ -6,16 +6,32 @@ using Microsoft.Xna.Framework.Graphics;
 using Ladybug;
 using Ladybug.UI;
 using Ladybug.UserInput;
+using Ladybug.Graphics;
 
 using Colors = Ladybug.Graphics.ColorExtensions;
 
 public class UIScene : Scene
 {
 	private UI _ui;
+	private Texture2D _testTexture;
+	private Sprite _testSprite;
+	private AnimationSequence _testAnimation;
 
 	protected override void Initialize()
 	{
 		_ui = BuildUI();
+	}
+
+	protected override void LoadContent()
+	{
+		_testTexture = ResourceCatalog.LoadResource<Texture2D>("test-texture", "image/block");
+		var spriteTex = ResourceCatalog.LoadResource<Texture2D>("test-sprite-texture", "image/bot");
+		_testSprite = new Sprite(_testTexture);
+		var atlas = new SpriteAtlas(spriteTex, 3, 4);
+		_testAnimation = new AnimationSequence(atlas, 0, 2)
+		{
+			Speed = 5
+		};
 	}
 
 	private UI BuildUI()
@@ -48,20 +64,36 @@ public class UIScene : Scene
 
 		stackPanel.AddControl<Button>("stackbutton1", out Button stackButton1)
 			.AddControl<Button>("stackbutton2", out Button stackButton2)
-			.AddControl<Button>("stackbutton3", out Button stackButton3);
+			.AddControl<Button>("stackbutton3", out Button stackButton3)
+			.AddControl<TextureFrame>(out TextureFrame texFrame)
+			.AddControl<SpriteFrame>(out SpriteFrame spriteFrame)
+			.AddControl<AnimationFrame>(out AnimationFrame animationFrame);
+
+		var frameBounds = new Rectangle(0, 0, 30, 30);
+
+		texFrame.Texture = _testTexture;
+		texFrame.SetBounds(frameBounds);
+
+		spriteFrame.Sprite = _testSprite;
+		spriteFrame.SetBounds(frameBounds);
+
+		animationFrame.Animation = _testAnimation;
+		animationFrame.SetBounds(frameBounds);
 
 		stackPanel.Orientation = Orientation.Horizontal;
+		stackPanel.HorizontalAlignment = HorizontalAlignment.Left;
+		stackPanel.VerticalAlignment = VerticalAlignment.Center;
 
 		stackButton1.Text = "Button 1";
-		stackButton1.SetBounds(100, 100, 32 * 4, 32 * 2);
+		stackButton1.SetBounds(0, 0, 32 * 4, 32 * 2);
 		stackButton2.Text = "Button 2";
-		stackButton2.SetBounds(100, 100, 32 * 4, 32 * 2);
+		stackButton2.SetBounds(0, 0, 32 * 4, 32 * 2);
 		stackButton3.Text = "Button 3";
-		stackButton3.SetBounds(100, 100, 32 * 4, 32 * 2);
+		stackButton3.SetBounds(0, 0, 32 * 4, 32 * 2);
 
 		stackPanel.Margin = new Margin(10);
 		stackPanel.Separation = 5;
-		stackPanel.SetBounds(200, 200, 32 * 10, 32 * 8);
+		stackPanel.SetBounds(0, 200, 32 * 10, 32 * 6);
 		stackPanel.BackgroundTexture = null;
 		
 		testTextBox.BackgroundTexture = ui.ResourceCatalog.GetResource<Texture2D>(UIResources.DefaultBackground);
